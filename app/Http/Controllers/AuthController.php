@@ -155,6 +155,13 @@ class AuthController extends Controller
 			);
 	}
 
+	public function me()
+	{
+		$user = Auth::user();
+
+		return response()->json($user);
+	}
+
 	public function logout(Request $request)
 	{
 		$refreshToken = $request->cookie('refresh_token');
